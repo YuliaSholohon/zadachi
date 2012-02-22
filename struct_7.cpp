@@ -1,3 +1,7 @@
+//From the keyboard enter data set about books in the form: 
+//<author> <name>, <Published-operation> <publication year>. 
+//Print a list of books entered in tabular form, combining them with years of publications in descending order.
+//Print information about books on programming in C / C + +.
 #include <stdio.h>
 #include <string>
 #include<iostream>
@@ -12,7 +16,7 @@ typedef struct a
 		char publishing[30];
 		
 } BOOK;
-
+//sort in descending order
 void sort(BOOK a[])
 {
     int i,j;
@@ -56,6 +60,7 @@ for(i=0;i<n;i++){
 cout<<endl<<"Books about programming C/C++"<<endl;
 cout<<setw(20)<<"Author"<<" | "<<setw(0)<<setw(20)<<"book name"<<" | "<<setw(0)<<setw(5)<<"year"<<" | "<<setw(0)<<setw(20)<<"publishing"<<" | "<<setw(0)<<endl;
 char *p;
+//finding books on C / C + + and output them
 char str1[]="C/C++";
 for(i=0;i<n;i++){
 p=strstr(x[i].book_name,str1);

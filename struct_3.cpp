@@ -1,3 +1,6 @@
+//From the keyboard enter a data about monthly results of the workshop: <Number month> <Plan> <Actual output>. 
+//Print entered data in tabular form, sorting them in descending order of percentage of the plan
+//Change number of mounth by their names
 #include <stdio.h>
 #include <string>
 #include<iostream>
@@ -5,18 +8,18 @@
 #define n 2
 using namespace std;
 struct month{
-			char *name_mounth[20];
-			int number;
+			char *name_mounth[20];//mounth name
+			int number;//mounth number
 		};
 typedef struct a
 {
 	month name;
-		int plan;
-		int output;
+		int plan;//plan
+		int output;//actual output
        int percent;
 		
 } Group;
-
+/// sort in descending order percentage of the plan
 void sort(Group a[])
 {
     int i,j;
@@ -50,7 +53,7 @@ for(i=0;i<n;i++){
 	cout<<"Enter output ";
 	cin>>x[i].output;
 }
-
+//Change number of mounth by their names
 for(i=0;i<n;i++){
 	switch(x[i].name.number)
 	{
@@ -82,6 +85,8 @@ for(i=0;i<n;i++){
 
 	}
 }
+
+//calculate the percentage of the plan
 for(i=0;i<n;i++){
 	x[i].percent=(x[i].output*100)/x[i].plan;
 }

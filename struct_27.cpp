@@ -1,3 +1,4 @@
+//sort the names of students in alphabetical order. find  2 highest children aged 9 - 10
 #include <stdio.h>
 #include <string>
 #include<iostream>
@@ -90,6 +91,8 @@ for(i=0;i<n;i++){
 		x[i].height=0;
 	}
 }
+
+//finding two highest child
 int max,pos;
 cout<<"Two max"<<endl;
 cout<<setw(10)<<"Surname"<<" | "<<setw(0)<<setw(10)<<"Name"<<" | "<<setw(0)<<setw(4)<<"Day"<<" | "<<setw(0)<<setw(7)<<"Mounth"<<" | "<<setw(0)<<setw(4)<<"Year"<<" | "<<setw(0)<<setw(7)<<"Height"<<" | "<<setw(0)<<setw(7)<<"Weight"<<" | "<<setw(0)<<endl;

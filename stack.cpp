@@ -1,7 +1,7 @@
 #include <iostream>
-#include "stdio.h"
-#include "stdlib.h"
-#include "conio.h"
+
+#include <stdlib.h>
+
 struct stackNode {/*структура, що посилається на себе*/
 int data;//дані що заносяться у стек, *nextPtr вказівник на наступний елемент списку
 struct stackNode *nextPtr;

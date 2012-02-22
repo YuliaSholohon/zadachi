@@ -1,3 +1,6 @@
+//From the keyboard enter a set of structures in the form <key> <Data>. 
+//Sort entered records in ascending key. In the sorted array enter 2 new records so that the total ordering of the array doesn't differ. 
+//Print the resulting array.
 #include <stdio.h>
 #include <string>
 #include<iostream>
@@ -51,6 +54,8 @@ cout<<setw(8)<<"key"<<" | "<<setw(0)<<setw(20)<<"Dani"<<" | "<<setw(0)<<endl;
 for(i=0;i<n;i++){
 	cout<<setw(8)<<x[i].key<<" | "<<setw(0)<<setw(20)<<x[i].dani<<" | "<<setw(0)<<endl;
 }
+
+//adding 2 new values
 cout<<"Enter two new value"<<endl;
 for( i=n;i<n1;i++)
 {

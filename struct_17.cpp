@@ -1,3 +1,6 @@
+//From the keyboard enter a data on vocal groups
+//Print entered data in tabular form, sorting them by name groups in alphabetical order. 
+//Randomly select from a list of three teams and identify among them the most numerous.
 #include <stdio.h>
 #include <string>
 #include <stdlib.h>
@@ -14,7 +17,7 @@ typedef struct a
 		
 		short Number;
 } Group;
-
+// sort the names of groups in alphabetical order
 void sort(Group a[])
 {
     int i,j;
@@ -56,9 +59,9 @@ srand( (unsigned)time( NULL ) );
 
 cout<<setw(10)<<"name"<<" | "<<setw(0)<<setw(5)<<"year"<<" | "<<setw(0)<<setw(5)<<"number"<<" | "<<setw(0)<<setw(10)<<"lead"<<" | "<<setw(0)<<endl;
 for(i=0;i<n;i++){
-	//printf("%s  %d %s %0.2f %d \n",x[i].Surname, x[i].year, x[i].Man_Woman,x[i].Height,x[i].Number);
-	cout<<setw(10)<<x[i].name<<" | "<<setw(0)<<setw(5)<<x[i].year<<" | "<<setw(0)<<setw(5)<<x[i].Number<<" | "<<setw(0)<<setw(10)<<x[i].Lead<<" | "<<setw(0)<<endl;}
 
+	cout<<setw(10)<<x[i].name<<" | "<<setw(0)<<setw(5)<<x[i].year<<" | "<<setw(0)<<setw(5)<<x[i].Number<<" | "<<setw(0)<<setw(10)<<x[i].Lead<<" | "<<setw(0)<<endl;}
+//random selection of 3 groups
 	int k1,k2,k3,max,temp;
 	k1=rand()%n;
 	k2=rand()%n;
@@ -75,6 +78,8 @@ for(i=0;i<n;i++){
 		}
 	}
 	cout<<"First colective "<<k1<<" "<<x[k1].Number<<endl <<"Second colective "<<k2<<" "<<x[k2].Number<<"Third colective "<<k3<<" "<<x[k3].Number<<endl;
+	
+	// find the largest group among 3 groups
 	if(x[k1].Number>x[k2].Number){
 		max=k1;
 		temp=x[k1].Number;

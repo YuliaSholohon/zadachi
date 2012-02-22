@@ -1,3 +1,5 @@
+//  enter the medical examination and  sort them by last names of students
+//determine average height and weight of male and female
 #include <stdio.h>
 #include <string>
 #include<iostream>
@@ -12,7 +14,7 @@ typedef struct a
 		float Height;
 		short Weight;
 } STUDENT;
-
+// sort by name
 void sort(STUDENT a[])
 {
     int i,j;
@@ -52,6 +54,7 @@ for(i=0;i<n;i++){
 }
 int man=0;int woman=0;int result;
 float average_man_weight=0;float average_woman_weight=0;float average_woman_height=0;float average_man_height=0;
+// find the average weight and height for men and women
 char m[1]={'m'};
 for(i=0;i<n;i++){
 	result=strcmp(m,x[i].Man_Woman);

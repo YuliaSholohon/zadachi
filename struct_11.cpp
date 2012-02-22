@@ -1,3 +1,6 @@
+//From the keyboard enter a a sequence entries that contain data about the results of the session students group
+//Print entered data in tabular form, sorting them by the names of students in alphabetical order. 
+//Identify the two students with the highest average rating score.
 #include <stdio.h>
 #include <string>
 #include<iostream>
@@ -12,7 +15,7 @@ typedef struct a
        
 		
 } Group;
-
+//sort in alphabetical order
 void sort( Group a[])
 {
     int i,j;
@@ -55,6 +58,8 @@ for(i=0;i<n;i++){
 
 cout<<"Two students which have the greatest average mark"<<endl;
 cout<<setw(10)<<"Surname"<<" | "<<setw(0)<<setw(10)<<"Name"<<" | "<<setw(0)<<setw(12)<<"Average mark"<<" | "<<setw(0)<<endl;
+
+//find 2 maximum average points
 int max,pos;
 for(int j=0;j<2;j++){
 	max=x[0].average_mark;pos=0;

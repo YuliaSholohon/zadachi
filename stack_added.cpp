@@ -1,33 +1,38 @@
+//РјРѕРґРёС„С–РєСѓРІР°С‚Рё РїСЂРѕРіСЂР°РјСѓ РІРёРєРѕСЂРёСЃС‚Р°РІС€Рё С‚Р°Рј РІРєР°Р·С–РІРЅРёРє РЅР° С„СѓРЅРєС†С–СЋ, РїРµСЂРµРіСЂСѓР·РєСѓ С„СѓРЅРєС†С–Р№,
+//С„СѓРЅРєС†С–С— Р·С– Р·РјС–РЅРЅРѕСЋ РєС–Р»СЊРєС–СЃС‚СЋ РїР°СЂР°РјРµС‚СЂС–РІ,С„СѓРЅРєС†С–С— Р·С– Р·РЅР°С‡РµРЅРЅСЏРјРё default
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include<stdarg.h>
-struct stackNode {/*структура, що посилається на себе*/
-int data;//дані що заносяться у стек, *nextPtr вказівник на наступний елемент списку
+struct stackNode {/*СЃС‚СЂСѓРєС‚СѓСЂР°, С‰Рѕ РїРѕСЃРёР»Р°С”С‚СЊСЃСЏ РЅР° СЃРµР±Рµ*/
+int data;//РґР°РЅС– С‰Рѕ Р·Р°РЅРѕСЃСЏС‚СЊСЃСЏ Сѓ СЃС‚РµРє, *nextPtr РІРєР°Р·С–РІРЅРёРє РЅР° РЅР°СЃС‚СѓРїРЅРёР№ РµР»РµРјРµРЅС‚ СЃРїРёСЃРєСѓ
 
 struct stackNode *nextPtr;
  };
 typedef struct stackNode node;
-typedef node *stack_ptr;//структура що вказуватиме на вказівник на вершину стеку
+typedef node *stack_ptr;//СЃС‚СЂСѓРєС‚СѓСЂР° С‰Рѕ РІРєР°Р·СѓРІР°С‚РёРјРµ РЅР° РІРєР°Р·С–РІРЅРёРє РЅР° РІРµСЂС€РёРЅСѓ СЃС‚РµРєСѓ
+//РїРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ С„СѓРЅРєС†С–Р№ , СЂРµР°Р»С–Р·РѕРІР°РЅРѕ РІРёР±С–СЂ РІРІРѕРґРёС‚Рё СЃРёРјРІРѕР»Рё С‡Рё С†РёС„СЂРё
 void push(stack_ptr *, int);
 void push(stack_ptr *, char);
 int pop(stack_ptr *);
 int isEmpty(stack_ptr);
 void ( *pointer )(void);
+//СЏРєС‰Рѕ РїСЂР°РїРѕСЂРµС†СЊ С„СѓРЅРєС†С–С— РґРѕСЂС–РІРЅСЋС” 0 РѕР·РЅР°С‡Р°С” РІРІРѕРґРёР»РёСЃСЊ СЃРёРјРІРѕР»Рё
 void printStack(stack_ptr,bool flag=0);
 void instructions(void);
+//С„СѓРЅРєС†С–СЏ СЂР°С…СѓС” СЃСѓРјСѓ РµР»РµРјРµРЅС‚С–РІ СЏРєС– РїРѕС‚С–Рј РїРµСЂРµРґР°РґСѓС‚СЊСЃСЏ РІ СЃС‚РµРє 
 int f(int n,int a, ...);
 
 using namespace std;
 int main() {
-	stack_ptr stackPtr = NULL; /*Вказівник на вершину*/
+	stack_ptr stackPtr = NULL; /*Р’РєР°Р·С–РІРЅРёРє РЅР° РІРµСЂС€РёРЅСѓ*/
 	int choice, value;
 	char choice_push;
 	char value1;
 	cout<<"What do you want to enter integer or char (i/c)";
 	cin>>choice_push;
 	if(choice_push=='c'){
-		pointer = &instructions; /* берем адрес функции */
+		pointer = &instructions; /* Р±РµСЂРµРј Р°РґСЂРµСЃ С„СѓРЅРєС†РёРё */
 pointer();
 
 	cout<<"? ";
@@ -39,34 +44,34 @@ pointer();
 			push (&stackPtr, value1);
 			printStack (stackPtr,1 );
 			break;
-		case 2: /*Видалення значення із стеку*/
+		case 2: /*Р’РёРґР°Р»РµРЅРЅСЏ Р·РЅР°С‡РµРЅРЅСЏ С–Р· СЃС‚РµРєСѓ*/
 			if (!isEmpty(stackPtr))
 				printf("The popped value is %c \n", pop(&stackPtr)) ;
 			printStack(stackPtr,1);
 			break;
 		default:
 		cout<<"Invalid choice."<<endl<<endl; 
-		pointer = &instructions; /* берем адрес функции */
+		pointer = &instructions; /* Р±РµСЂРµРј Р°РґСЂРµСЃ С„СѓРЅРєС†РёРё */
 pointer();
 		break; }
 		cout<<"?"; 
 		cin>> choice; }
 		cout<<"End of run."<<endl;
 	}else{
-	pointer = &instructions; /* берем адрес функции */
+	pointer = &instructions; /* Р±РµСЂРµРј Р°РґСЂРµСЃ С„СѓРЅРєС†РёРё */
 pointer();
 	cout<<"? ";
 	cin>>choice;
 	while (choice !=4) {
 		switch (choice) {
-		case 1: /*Занесення значення в стек*/ 
+		case 1: /*Р—Р°РЅРµСЃРµРЅРЅСЏ Р·РЅР°С‡РµРЅРЅСЏ РІ СЃС‚РµРє*/ 
 			cin>> value;
 			push (&stackPtr, value);
 			//f(4,2,2,2,2);
 		printStack (stackPtr );
 			
 			break;
-		case 2: /*Видалення значення із стеку  */
+		case 2: /*Р’РёРґР°Р»РµРЅРЅСЏ Р·РЅР°С‡РµРЅРЅСЏ С–Р· СЃС‚РµРєСѓ  */
 			
 			if (!isEmpty(stackPtr))
 				printf("The popped value is %d \n", pop(&stackPtr)) ;
@@ -80,7 +85,7 @@ pointer();
 
 		default:
 		cout<<"Invalid choice."<<endl<<endl; 
-		pointer = &instructions; /* берем адрес функции */
+		pointer = &instructions; /* Р±РµСЂРµРј Р°РґСЂРµСЃ С„СѓРЅРєС†РёРё */
 pointer();
 		break; }
 		cout<<"?"; 
@@ -90,7 +95,7 @@ pointer();
 return 0;
 }
 	
-/*Вивід інструкції на екран*/
+/*Р’РёРІС–Рґ С–РЅСЃС‚СЂСѓРєС†С–С— РЅР° РµРєСЂР°РЅ*/
 void instructions(void) {
 	cout<<"Enter choice:\n"
 		"1 to push a value on the stack\n"
@@ -98,41 +103,41 @@ void instructions(void) {
 		"3 sum of elements\n"
 		"4 to end program\n"
 		; }
-/*Занесення нового значення у вершинку стеку*/
+/*Р—Р°РЅРµСЃРµРЅРЅСЏ РЅРѕРІРѕРіРѕ Р·РЅР°С‡РµРЅРЅСЏ Сѓ РІРµСЂС€РёРЅРєСѓ СЃС‚РµРєСѓ*/
 void push (stack_ptr *topPtr, int info)
 {	
 	stack_ptr newPtr;
-	newPtr =new node;//виведення пам'яті для вузла
+	newPtr =new node;//РІРёРІРµРґРµРЅРЅСЏ РїР°Рј'СЏС‚С– РґР»СЏ РІСѓР·Р»Р°
 	if (newPtr != NULL) {
-		newPtr->data = info;// нове значення поступає на вершину стеку
-		newPtr->nextPtr = *topPtr;//newPtr показує на попереднє значення
-		*topPtr = newPtr;// тепер *topPtr показує на нове значення
+		newPtr->data = info;// РЅРѕРІРµ Р·РЅР°С‡РµРЅРЅСЏ РїРѕСЃС‚СѓРїР°С” РЅР° РІРµСЂС€РёРЅСѓ СЃС‚РµРєСѓ
+		newPtr->nextPtr = *topPtr;//newPtr РїРѕРєР°Р·СѓС” РЅР° РїРѕРїРµСЂРµРґРЅС” Р·РЅР°С‡РµРЅРЅСЏ
+		*topPtr = newPtr;// С‚РµРїРµСЂ *topPtr РїРѕРєР°Р·СѓС” РЅР° РЅРѕРІРµ Р·РЅР°С‡РµРЅРЅСЏ
 	} else
 			cout<<info<<" not inserted. No memory available."<<endl; 
 }
 void push (stack_ptr *topPtr, char info)
 {	
 	stack_ptr newPtr;
-	newPtr =new node;//виведення пам'яті для вузла
+	newPtr =new node;//РІРёРІРµРґРµРЅРЅСЏ РїР°Рј'СЏС‚С– РґР»СЏ РІСѓР·Р»Р°
 	if (newPtr != NULL) {
-		newPtr->data = static_cast<int> (info);// нове значення поступає на вершину стеку
-		newPtr->nextPtr = *topPtr;//newPtr показує на попереднє значення
-		*topPtr = newPtr;// тепер *topPtr показує на нове значення
+		newPtr->data = static_cast<int> (info);// РЅРѕРІРµ Р·РЅР°С‡РµРЅРЅСЏ РїРѕСЃС‚СѓРїР°С” РЅР° РІРµСЂС€РёРЅСѓ СЃС‚РµРєСѓ
+		newPtr->nextPtr = *topPtr;//newPtr РїРѕРєР°Р·СѓС” РЅР° РїРѕРїРµСЂРµРґРЅС” Р·РЅР°С‡РµРЅРЅСЏ
+		*topPtr = newPtr;// С‚РµРїРµСЂ *topPtr РїРѕРєР°Р·СѓС” РЅР° РЅРѕРІРµ Р·РЅР°С‡РµРЅРЅСЏ
 	} else
 			cout<<info<<" not inserted. No memory available."<<endl; 
 }
-/*Видалення вузла на вершині стеку*/
+/*Р’РёРґР°Р»РµРЅРЅСЏ РІСѓР·Р»Р° РЅР° РІРµСЂС€РёРЅС– СЃС‚РµРєСѓ*/
 int pop(stack_ptr *topPtr)
 {
 	stack_ptr tempPtr;
 	int popValue;
-	tempPtr = *topPtr;//дані про зміннц що треба видалити(значення, адреса)
-	popValue = (*topPtr)->data;// значення що потрібно видалити
-	*topPtr = (*topPtr)->nextPtr;// вершина переходить у наступне значення
-	free(tempPtr); //видалення вершини
+	tempPtr = *topPtr;//РґР°РЅС– РїСЂРѕ Р·РјС–РЅРЅС† С‰Рѕ С‚СЂРµР±Р° РІРёРґР°Р»РёС‚Рё(Р·РЅР°С‡РµРЅРЅСЏ, Р°РґСЂРµСЃР°)
+	popValue = (*topPtr)->data;// Р·РЅР°С‡РµРЅРЅСЏ С‰Рѕ РїРѕС‚СЂС–Р±РЅРѕ РІРёРґР°Р»РёС‚Рё
+	*topPtr = (*topPtr)->nextPtr;// РІРµСЂС€РёРЅР° РїРµСЂРµС…РѕРґРёС‚СЊ Сѓ РЅР°СЃС‚СѓРїРЅРµ Р·РЅР°С‡РµРЅРЅСЏ
+	free(tempPtr); //РІРёРґР°Р»РµРЅРЅСЏ РІРµСЂС€РёРЅРё
 	return popValue; 
 }
-/*Друк стеку*/
+/*Р”СЂСѓРє СЃС‚РµРєСѓ*/
 void printStack(stack_ptr currentPtr, bool flag)
 { 	
 	if (currentPtr == NULL)
@@ -149,16 +154,16 @@ void printStack(stack_ptr currentPtr, bool flag)
 		cout<<"NULL"<<endl<<endl; 
 	} 
 }
-/*Перевірка чи пустий стек*/
+/*РџРµСЂРµРІС–СЂРєР° С‡Рё РїСѓСЃС‚РёР№ СЃС‚РµРє*/
 int isEmpty(stack_ptr topPtr)
 {	
-	return topPtr == NULL;//якщо вершина показує на 0 значить стек пустий
+	return topPtr == NULL;//СЏРєС‰Рѕ РІРµСЂС€РёРЅР° РїРѕРєР°Р·СѓС” РЅР° 0 Р·РЅР°С‡РёС‚СЊ СЃС‚РµРє РїСѓСЃС‚РёР№
 }
 
 
 	int f(int n, int a, ...){
-	 va_list p; int sum=0;            //--объявление указателя
-    va_start(p, n); int b;           //--инициализация указателя
+	 va_list p; int sum=0;            //РѕРіРѕР»РѕС€РµРЅРЅСЏ РІРєР°Р·С–РІРЅРёРєР°
+    va_start(p, n); int b;           //С–РЅС–С†С–Р°Р»С–Р·Р°С†С–СЏ РІРєР°Р·С–РІРЅРёРєР°
   while(n--)           
     {
 		b=va_arg(p,int);

@@ -1,3 +1,6 @@
+//From the keyboard enter a  data with the results of the team for a week
+//Print entered data in tabular form, sorting them in ascending order of plan. 
+//Identify the days of highest and lowest percentages of the plan.
 #include <stdio.h>
 #include <string>
 #include<iostream>
@@ -13,7 +16,7 @@ typedef struct a
        int percent;
 		
 } Group;
-
+// sort in ascending order of plan
 void sort(Group a[])
 {
     int i,j;
@@ -58,6 +61,7 @@ cout<<setw(10)<<"Number"<<" | "<<setw(0)<<setw(6)<<"plan"<<" | "<<setw(0)<<setw(
 for(i=0;i<n;i++){
 	cout<<setw(10)<<x[i].day<<" | "<<setw(0)<<setw(6)<<x[i].plan<<" | "<<setw(0)<<setw(12)<<x[i].output<<" | "<<setw(0)<<setw(8)<<x[i].percent<<" | "<<setw(0)<<endl;}
 int max,pos;
+//find the day with the highest percentages performance
 max=x[0].percent;pos=0;
 	for(i=0;i<n;i++){
 		if(x[i].percent>max){
@@ -68,6 +72,7 @@ max=x[0].percent;pos=0;
 	cout<<setw(10)<<"Number"<<" | "<<setw(0)<<setw(6)<<"plan"<<" | "<<setw(0)<<setw(12)<<"output"<<" | "<<setw(0)<<setw(8)<<"percent"<<" | "<<setw(0)<<endl;
 	cout<<"Day which have the biggest percent"<<endl;
 		cout<<setw(10)<<x[pos].day<<" | "<<setw(0)<<setw(6)<<x[pos].plan<<" | "<<setw(0)<<setw(12)<<x[pos].output<<" | "<<setw(0)<<setw(8)<<x[pos].percent<<" | "<<setw(0)<<endl;
+		// find the day with the lowest percentages performance
 		int min;
 min=x[0].percent;pos=0;
 	for(i=0;i<n;i++){

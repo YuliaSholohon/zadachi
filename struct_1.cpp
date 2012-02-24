@@ -1,3 +1,6 @@
+//From the keyboard enter a data set about books
+//Print entered data in tabular form, sorting them in alphabetical order by author's name. 
+//Print a list of books published before 1970.
 #include <stdio.h>
 #include <string>
 #include<iostream>
@@ -6,13 +9,13 @@
 using namespace std;
 typedef struct a
 {
-        char Author [20];
-        short year;
-        char book_name[30];
-		char comment[30];
+        char Author [20];//author name
+        short year;//publication year
+        char book_name[30];//name of the book
+		char comment[30];//comments
 		
 } BOOK;
-
+//function which sorts books names in alphabetical
 void sort(BOOK a[])
 {
     int i,j;
@@ -56,6 +59,7 @@ for(i=0;i<n;i++){
 cout<<endl<<"Books before 1970"<<endl;
 cout<<setw(20)<<"Author"<<" | "<<setw(0)<<setw(20)<<"book name"<<" | "<<setw(0)<<setw(5)<<"year"<<" | "<<setw(0)<<setw(20)<<"Comment"<<" | "<<setw(0)<<endl;
 bool flag=0;
+//prints out a list of books published before 1970
 for(i=0;i<n;i++){
 	if(x[i].year<1970){
 		cout<<setw(20)<<x[i].Author<<" | "<<setw(0)<<setw(20)<<x[i].book_name<<" | "<<setw(0)<<setw(5)<<x[i].year<<" | "<<setw(0)<<setw(20)<<x[i].comment<<" | "<<setw(0)<<endl;

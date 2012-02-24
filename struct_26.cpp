@@ -1,3 +1,6 @@
+//From the keyboard enter a entries that contain data about the results of the session students groups: 
+//<first name>, <second name>, <list of ratings>. Print entered data in tabular form, sorting them in descending order average rating score of the student. 
+//Identify the percentage of students, the average rating score greater than 70.
 #include <stdio.h>
 #include <string>
 #include<iostream>

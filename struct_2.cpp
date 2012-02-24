@@ -1,3 +1,6 @@
+//. From the keyboard enter a the sequence data which is the coordinates of opposite vertices of rectangles. 
+//Print entered data in tabular form, sorting them in ascending left coordinates x rectangle. 
+//Identify the two rectangles with the largest and the smallest area.
 #include <stdio.h>
 #include <string>
 #include<iostream>
@@ -19,7 +22,7 @@ typedef struct Decart
 	
 		
 } Group;
-
+//function sort left coordinates x
 void sort( Group Decart[])
 {
     int i,j;
@@ -76,7 +79,7 @@ cout<<setw(3)<<"Ax"<<" | "<<setw(0)<<setw(3)<<"Ay"<<" | "<<setw(0)<<setw(3)<<"Bx
 for(i=0;i<n;i++){
 	cout<<setw(3)<<x[i].a.x<<" | "<<setw(0)<<setw(3)<<x[i].a.y<<" | "<<setw(0)<<setw(3)<<x[i].b.x<<" | "<<setw(0)<<setw(3)<<x[i].b.y<<" | "<<setw(0)<<setw(3)<<x[i].c.x<<" | "<<setw(0)<<setw(3)<<x[i].c.y<<" | "<<setw(0)<<setw(3)<<x[i].d.x<<" | "<<setw(0)<<setw(3)<<x[i].d.y<<" | "<<setw(0)<<setw(6)<<x[i].square<<" | "<<setw(0)<<endl;
 }
-
+//copy space of rectanglesin another array to find minimum
 for(i=0;i<n;i++){
 	x[i].square_min=x[i].square;
 }
@@ -95,6 +98,7 @@ for(int j=0;j<2;j++){
 	x[pos].square=0;
 }
 int min,pos1;
+//find the minimum area of ​​2 rectangles
 cout<<"Two min"<<endl;
 cout<<setw(3)<<"Ax"<<" | "<<setw(0)<<setw(3)<<"Ay"<<" | "<<setw(0)<<setw(3)<<"Bx"<<" | "<<setw(0)<<setw(3)<<"By"<<" | "<<setw(0)<<setw(3)<<"Cx"<<" | "<<setw(0)<<setw(3)<<"Cy"<<" | "<<setw(0)<<setw(3)<<"Dx"<<" | "<<setw(0)<<setw(3)<<"Dy"<<" | "<<setw(0)<<setw(6)<<"square"<<" | "<<setw(0)<<endl;
 for(int j=0;j<2;j++){

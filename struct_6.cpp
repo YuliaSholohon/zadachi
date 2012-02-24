@@ -1,3 +1,7 @@
+//From the keyboard enter entries that contain data about the results of the session on the course:
+//<Number > <group>, <average rating point>. Print entered data in tabular form, 
+//sorting them in descending order of rating points. 
+//Identify the three groups in "KH" with the highest average rating score.
 #include <stdio.h>
 #include <string>
 #include<iostream>
@@ -53,6 +57,8 @@ cout<<setw(6)<<"Number"<<" | "<<setw(0)<<setw(6)<<"Group"<<" | "<<setw(0)<<setw(
 for(i=0;i<n;i++){
 	cout<<setw(6)<<x[i].number<<" | "<<setw(0)<<setw(6)<<x[i].group<<" | "<<setw(0)<<setw(12)<<x[i].average_mark<<" | "<<setw(0)<<endl;}
 char *p;
+
+// if the group does not KH then the average score set 0
 char str1[]="KH";
 for(i=0;i<n;i++){
 	p=strstr(x[i].group,str1);

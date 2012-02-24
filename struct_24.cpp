@@ -1,3 +1,6 @@
+//. From the keyboard enter a entries that contain such data  <Name of publication> <Index> <Number of subscribers>. 
+// print the data in tabular form, sorting them by index. 
+//Identify the the two most popular publications.
 #include <stdio.h>
 #include <string>
 #include<iostream>
@@ -11,7 +14,7 @@ typedef struct a
 	int index;
 	int number_of_buyers;		
 } Post;
-
+// sort indexes
 void sort(Post a[])
 {
     int i,j;
@@ -51,6 +54,7 @@ cout<<setw(20)<<"Name of publishing"<<" | "<<setw(0)<<setw(10)<<"index"<<" | "<<
 for(i=0;i<n;i++){
 	cout<<setw(20)<<x[i].name<<" | "<<setw(0)<<setw(10)<<x[i].index<<" | "<<setw(0)<<setw(20)<<x[i].number_of_buyers<<" | "<<setw(0)<<endl;
 }
+// findind two most popular publications
 int max,pos;
 cout<<"Two most popular"<<endl;
 cout<<setw(20)<<"Name of publishing"<<" | "<<setw(0)<<setw(10)<<"index"<<" | "<<setw(0)<<setw(20)<<"number of buyers"<<" | "<<setw(0)<<endl;

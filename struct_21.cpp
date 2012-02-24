@@ -1,3 +1,7 @@
+//From the keyboard enter a entries that contain information about groups of students 
+//they are <group>, <Student>, <number of excellent>, <number of students studying without "3"> 
+//<bad students>. Print entered data in a table adding information for each course.
+//Identify the group in which the highest percentage of students studying without 3.
 #include <stdio.h>
 #include <string>
 #include<iostream>
@@ -16,24 +20,9 @@ typedef struct a
 
 		
 } Group;
+//function to find information for each course
 int find(Group x[]);
-/*void sort(Group a[])
-{
-    int i,j;
-    Group p;
-        for(i=0;i<n-1;i++)
-{
-for(j=i+1;j<n;j++)
-{
-	if (a[i].plan>a[j].plan)
-                {
-                        p = a[i];
-                        a[i] = a[j];
-                        a[j] = p;
-                }
-        }
-        }
-}*/
+
 
 int main()
 { 
@@ -65,7 +54,7 @@ for(i=0;i<n;i++){
 
 cout<<endl;
 find(x);
-
+// find a group where the highest percentage of students without mark3 
 int max,pos;
 max=x[0].persent;pos=0;
 	for(i=0;i<n;i++){
@@ -99,7 +88,7 @@ for(i=0;i<n;i++){
 cout<<setw(6)<<"1"<<" | "<<setw(0)<<setw(6)<<sum_good<<" | "<<setw(0)<<setw(10)<<sum_not_bad<<" | "<<setw(0)<<setw(10)<<sum_bad<<" | "<<setw(0)<<endl;
 //cout<<"First course good studied "<<sum_good<<" have no three  "<<sum_not_bad<<"  bad "<<sum_bad<<endl;
  sum_good=0,sum_not_bad=0,sum_bad=0;
-//Підраховуємо суму для 2-го курсу
+// Calculate the sum for 2 nd course
 char str11[]="21";char str12[]="22";char str13[]="23";
 for(i=0;i<n;i++){
 	group=strstr(x[i].group,str11);
@@ -113,7 +102,7 @@ for(i=0;i<n;i++){
 	}
 }
 cout<<setw(6)<<"2"<<" | "<<setw(0)<<setw(6)<<sum_good<<" | "<<setw(0)<<setw(10)<<sum_not_bad<<" | "<<setw(0)<<setw(10)<<sum_bad<<" | "<<setw(0)<<endl;
-//Підраховуємо суму для 3-го курсу
+// Calculate the sum for 3 course
 sum_good=0,sum_not_bad=0,sum_bad=0;
 char str21[]="31";char str22[]="32";char str23[]="33";
 for(i=0;i<n;i++){
@@ -128,7 +117,7 @@ for(i=0;i<n;i++){
 	}
 }
 cout<<setw(6)<<"3"<<" | "<<setw(0)<<setw(6)<<sum_good<<" | "<<setw(0)<<setw(10)<<sum_not_bad<<" | "<<setw(0)<<setw(10)<<sum_bad<<" | "<<setw(0)<<endl;
-//Підраховуємо суму для 4-го курсу
+// Calculate the sum for 4 course
 sum_good=0,sum_not_bad=0,sum_bad=0;
 char str31[]="41";char str32[]="42";char str33[]="43";
 for(i=0;i<n;i++){
@@ -143,7 +132,7 @@ for(i=0;i<n;i++){
 	}
 }
 cout<<setw(6)<<"4"<<" | "<<setw(0)<<setw(6)<<sum_good<<" | "<<setw(0)<<setw(10)<<sum_not_bad<<" | "<<setw(0)<<setw(10)<<sum_bad<<" | "<<setw(0)<<endl;
-//Підраховуємо суму для 5-го курсу
+// Calculate the sum for 5 course
 sum_good=0,sum_not_bad=0,sum_bad=0;
 char str41[]="51";char str42[]="52";char str43[]="53";
 for(i=0;i<n;i++){
